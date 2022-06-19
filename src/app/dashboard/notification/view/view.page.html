@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons defaultHref="/dashboard/tabs/notification">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>view</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!isLoading">
+  <ion-grid>
+    <div *ngIf="isLoading">
+      <ion-spinner></ion-spinner>
+    </div>
+    <ion-col size-md="10" offset-md="1" >
+      <ion-item>
+        <ion-img src="assets/profile.jfif">
+        </ion-img>
+
+      </ion-item>
+
+      <ion-item>
+
+        <ion-title text-center>
+          <ion-label>{{customer.firstname}} {{customer.lastname}} </ion-label>
+        </ion-title>
+      </ion-item>
+    </ion-col>
+  </ion-grid>
+</ion-content>

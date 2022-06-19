@@ -1,0 +1,75 @@
+.weather{
+    background-color: lightblue;
+    width: 500px;
+    height: 200px;
+    border-radius: 25px;
+    color: black;
+}
+
+ion-row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.crop-card
+{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+ion-col{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.crop-card 
+{
+    width: 100px;
+    height: 130px;
+    text-align: center;
+    ion-img
+    {
+        width: fit-content;
+        height: 100px !important;
+    }
+  
+}
+
+.search
+{
+    background-color: rgb(149, 149, 231);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 35px;
+    border-radius: 30px;
+
+    ion-icon{
+        font-size: 50px;
+        color: black;
+        float: left;
+        margin-right: 10px;
+    }
+    ion-card{
+        color: white;
+    }
+}
+.doubts
+{
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 65px;
+    border-radius: 30px;
+    margin-top: 10px;
+}

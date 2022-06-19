@@ -1,0 +1,41 @@
+
+.img
+{
+    padding: 0px;
+    margin: 0px;
+  
+    
+    ion-img{
+        height: 300px;
+        padding: 0px;
+        margin: 0px;
+    
+    }
+    
+    ion-col
+    {    
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+}
+
+.details
+{
+    text-align: center;
+    ion-card{
+        height: 200px;
+        width: 160px;
+        background-color: white;
+    }
+    ion-img{
+        height: 150px !important;
+        width: fit-content !important;
+        padding: 0px;
+        margin: 0px;
+    }
+}

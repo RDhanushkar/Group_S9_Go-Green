@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title >Go Green</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submittedForm(formDetails)" #formDetails="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3" size="10" offset="1">
+          <ion-list lines="none">
+            <ion-item>
+                <img src="assets/logo.png" alt="logo.png">
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" required email name="name" lines="none" ngModel #name="ngModel" placeholder="User Name"></ion-input>
+            </ion-item>
+            <!-- <ion-item *ngIf="!name.valid && name.touched" lines="none">
+              <p>Please Enter the Valid Name</p>
+            </ion-item> -->
+
+            <ion-item>
+              <ion-input type="password"  minlength="6"   required password name="password" ngModel #password="ngModel" placeholder="Password"></ion-input>
+            </ion-item>
+            <!-- <ion-item *ngIf="!password.valid && password.touched" lines="none">
+              <p>Please Enter the Valid Password</p>
+            </ion-item> -->
+
+            <ion-button type="submit" size="large" fill="solid"  expand="block" color="primary" routerLink="/dashboard/tabs/home">Login</ion-button>
+            <ion-button type="button" size="large" fill="solid"  expand="block" color="success" routerLink="/register">Register</ion-button>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</form>
+</ion-content>

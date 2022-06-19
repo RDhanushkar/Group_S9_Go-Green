@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start" >
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom"  horizontal="end" slot="fixed" >
+    <ion-fab-button color="primary" routerLink="/dashboard/tabs/notification/add">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+ <ion-grid>
+  <ion-row>
+    <div *ngIf="isLoading">
+      <ion-spinner></ion-spinner>
+    </div>
+    <ion-col size-md="10" offset-md="1" >
+      <ion-list>
+        <ion-item-sliding *ngFor="let customer of Customers" #item >
+          <ion-item [routerLink]="['/dashboard','tabs','notification','view',customer._id]">
+            <ion-thumbnail slot="start">
+              <ion-img src="assets/profile.jfif">
+              </ion-img>
+            </ion-thumbnail>
+            <ion-title>
+              <ion-label>{{customer.firstname}}</ion-label>
+            </ion-title>
+          </ion-item>
+
+          <ion-item-options  side="start">
+            <ion-item-option color="primary" (click)="EditShop(customer._id,item)">
+              <ion-icon name="create" slot="icon-only"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="DeleteShop(customer._id,item)">
+              <ion-icon name="trash" slot="icon-only"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-button color="primary" routerLink="/dashboard/tabs/notification/add">Create Customer</ion-button>
+  </ion-row>
+  </ion-grid>
+</ion-content>

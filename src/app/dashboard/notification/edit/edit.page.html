@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons defaultHref="/dashboard/tabs/notification">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <div *ngIf="isLoading">
+      <ion-spinner></ion-spinner>
+    </div>
+
+    <ion-col *ngIf="!isLoading">
+      <form [formGroup]="reactiveform">
+        <ion-item>
+          <ion-img src="assets/profile.jfif">
+          </ion-img>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Shop Name</ion-label>
+          <ion-input type="text" autocomplete autocorrect  formControlName="firstname"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!reactiveform.get('firstname').valid && reactiveform.get('firstname').touched" lines="none">
+          <ion-label>Shop Name Should be Valided</ion-label>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label position="floating">Shop Name</ion-label>
+          <ion-input type="text" autocomplete autocorrect  formControlName="lastname"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!reactiveform.get('lastname').valid && reactiveform.get('lastname').touched" lines="none">
+          <ion-label>Shop Name Should be Valided</ion-label>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label position="floating">Shop Name</ion-label>
+          <ion-input type="text" autocomplete autocorrect  formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!reactiveform.get('email').valid && reactiveform.get('email').touched" lines="none">
+          <ion-label>Shop Name Should be Valided</ion-label>
+        </ion-item>
+      </form>
+    </ion-col>
+  </ion-grid>
+</ion-content>

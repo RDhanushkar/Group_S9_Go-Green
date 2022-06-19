@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons defaultHref="/dashboard/tabs/notification">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Customer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <div *ngIf="isLoading">
+      <ion-spinner></ion-spinner>
+    </div>
+    <form (ngSubmit) = "SubmittedForm(form)"  #form="ngForm">
+      <ion-row>
+        <ion-col *ngIf="!isLoading">
+            <ion-item>
+              <ion-img src="assets/profile.jfif">
+              </ion-img>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">First Name</ion-label>
+              <ion-input type="text"   autocomplete autocorrect name="firstname" required ngModel #firstname="ngModel" lines="none"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="firstname.touched && !firstname.valid" lines="none">
+              <ion-label>First Name Should be Valided</ion-label>
+            </ion-item>
+
+
+            <ion-item>
+              <ion-label position="floating">Last Name</ion-label>
+              <ion-input type="text"   autocomplete autocorrect name="lastname "required ngModel #lastname="ngModel" lines="none"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="lastname.touched && !lastname.valid" lines="none">
+              <ion-label>Last Name Should be Valided</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" email    name="email" required ngModel #Email="ngModel" lines="none"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="Email.touched && !Email.valid" lines="none">
+              <ion-label>Email Should be Valided</ion-label>
+            </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-button type="submit" color="primary"  expand="full" [disabled]="!form.valid">
+          Create
+        </ion-button>
+      </ion-row>
+  </form>
+
+  </ion-grid>
+</ion-content>
