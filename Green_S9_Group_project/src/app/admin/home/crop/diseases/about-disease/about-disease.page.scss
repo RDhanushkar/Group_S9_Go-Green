@@ -1,0 +1,25 @@
+ion-card-header{
+  ion-card-title{
+    font-size: 2.5rem;
+    
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+ion-card-content{
+  ion-img{
+    padding: 5px;
+    width: fit-content !important;
+    height: max-content !important;
+    object-fit: cover !important;
+  }
+  p{
+    padding: 5px;
+    font-size: 1.5rem;
+    color: black;
+  }
+}
+ion-card{
+  box-shadow: 1px 1px 5px black;
+}

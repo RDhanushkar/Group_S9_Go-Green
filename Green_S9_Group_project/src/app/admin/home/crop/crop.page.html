@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons  slot="start">
+      <ion-back-button [defaultHref]="['/admin','tabs','home']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{crop.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="img">
+      <ion-col >
+        <ion-img [src]="crop.img"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="details">
+
+      <ion-col >
+        <ion-card [routerLink]="['/admin','tabs','home',crop.name,'crop-tips']">
+          <ion-img src="assets//project_images/croptips.jfif"></ion-img>
+          <ion-card-title >
+           Crop Tips
+          </ion-card-title>
+        </ion-card>
+      </ion-col>
+
+      <ion-col >
+        <ion-card [routerLink]="['/admin','tabs','home',crop.name,'diseases']">
+          <ion-img src="assets//project_images/disease.jfif"></ion-img>
+          <ion-card-title >
+            Diseases
+           </ion-card-title>
+        </ion-card>
+      </ion-col>
+
+      <ion-col >
+        <ion-card [routerLink]="['/admin','tabs','home',crop.name,'animal-intervention']">
+          <ion-img src="assets//project_images/animal_intervention.jfif"></ion-img>
+          <ion-card-title >
+            Animal Intervention
+           </ion-card-title>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

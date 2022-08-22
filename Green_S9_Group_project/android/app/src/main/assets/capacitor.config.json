@@ -1,0 +1,6 @@
+{
+	"appId": "com.GreenLive.GroupProject",
+	"appName": "codeswag-demo",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

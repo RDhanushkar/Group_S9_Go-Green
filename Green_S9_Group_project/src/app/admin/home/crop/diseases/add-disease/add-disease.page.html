@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin/tabs/home/disease"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Disease</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col >
+        <form (ngSubmit)="SubmittedForm(form)" #form="ngForm" enctype="multipart/form-data">
+          <ion-item>
+            <ion-label position="floating">Disease Name</ion-label>
+            <ion-input name="disease" type="text" ngModel #disease="ngModel" required lines="none"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!disease.valid && disease.touched" lines="none">
+            <p>Please Enter the Disease</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">About The Disease</ion-label>
+            <ion-textarea name="adisease" type="text" ngModel #adisease="ngModel"  lines="none" rows="5"></ion-textarea>
+          </ion-item>
+          <ion-item *ngIf="!adisease.valid && adisease.touched" lines="none">
+            <p>Please Enter the About The Disease</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Remedy Action</ion-label>
+            <ion-textarea name="raction" type="text" ngModel #raction="ngModel"  lines="none" rows="5"></ion-textarea>
+          </ion-item>
+          <ion-item *ngIf="!raction.valid && raction.touched" lines="none">
+            <p>Please Enter the Remedy Action</p>
+          </ion-item>
+
+
+          <ion-row>
+            <ion-col size-md="8" offset-md="2">
+              <ion-item>
+                <ion-input type="file"  ngModel  name="image" #image="ngModel" (change)="uploadfile($event)" ></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!image.valid && image.touched" lines="none">
+                <ion-label>Image Should be Valided</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col  size-md="8" offset-md="2">
+              <ion-button type="submit" color="success" expand="full" [disabled]="!form.valid" >Create</ion-button>
+            </ion-col>
+          </ion-row>
+
+        </form>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

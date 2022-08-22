@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">codeswag-demo</string>
+    <string name="title_activity_main">codeswag-demo</string>
+    <string name="package_name">com.greenlive</string>
+    <string name="custom_url_scheme">com.greenlive</string>
+</resources>

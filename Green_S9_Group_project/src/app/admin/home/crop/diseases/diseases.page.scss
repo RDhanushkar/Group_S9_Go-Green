@@ -1,0 +1,74 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+ion-row,ion-col{
+  padding: 0%;
+  margin: 0%;
+}
+
+.content
+{
+  ion-card{
+    margin: 10px;
+    .image{
+      border-radius: 10px;
+
+      ion-img{
+        object-fit: cover;
+        padding: 0%;
+        margin: 0%;
+        border-radius: 10px;
+      }
+    }
+
+    .title{
+      h1{
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        color: blue;
+        padding: 5px;
+      }
+    }
+
+    .btns
+    {
+
+      ion-buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ion-button{
+          border-radius: 25px;
+          margin: 10px;
+          padding: 10px;
+          font-weight: 600;
+          height: 3rem;
+          width: 9rem;
+        }
+      }
+
+
+      .about{
+        background-color: blue;
+        color: white;
+      }
+
+      .about:active{
+        background-color: rgb(3, 3, 109);
+      }
+
+      .remedy{
+        background-color: rgb(49, 148, 49);
+        color: white;
+      }
+
+      .remedy:active{
+        background-color: rgb(3, 82, 3);
+      }
+    }
+  }
+}

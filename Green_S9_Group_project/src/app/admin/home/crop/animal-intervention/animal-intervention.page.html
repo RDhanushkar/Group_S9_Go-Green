@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="['/admin','tabs','home',crop.name]"></ion-back-button >
+    </ion-buttons>
+    <ion-title>Green Live</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="img">
+        <ion-img [src]="crop.img"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="img">
+        <ion-toolbar color="primary" class="sawbar">
+          <ion-title >Sowing Tips</ion-title>
+        </ion-toolbar>
+
+        <!-- <ion-card *ngFor="let saw of saws">
+          <ion-card-content>
+            {{saw}}
+          </ion-card-content>
+        </ion-card> -->
+
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col class="img">
+        <ion-toolbar color="danger" class="sawbar">
+          <ion-title >Tips For Choosing What to Grow</ion-title>
+        </ion-toolbar>
+<!--
+        <ion-card *ngFor="let saw of saws">
+          <ion-card-content>
+            {{saw}}
+          </ion-card-content>
+        </ion-card> -->
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end"  slot="fixed">
+    <ion-fab-button   [routerLink] = "['/admin','tabs','home',crop.name,'add-tips']" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+

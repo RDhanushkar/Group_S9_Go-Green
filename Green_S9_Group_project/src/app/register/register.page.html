@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submittedForm(formDetails)" #formDetails="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3" size="10" offset="1">
+          <ion-list lines="none">
+            <ion-item>
+                <img src="assets/logo.png" alt="logo.png">
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" required  name="username" lines="none" ngModel #username="ngModel" placeholder="User Name"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!username.valid && username.touched" lines="none">
+              <p>Please Enter the User Name</p>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" required  name="yourname" lines="none" ngModel #yourname="ngModel" placeholder="Your Name"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!yourname.valid && yourname.touched" lines="none">
+              <p>Please Enter the Your Name</p>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" required  name="mobile" lines="none" ngModel #mobile="ngModel" placeholder="Mobile No"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!mobile.valid && mobile.touched" lines="none">
+              <p>Please Enter the Mobile Number</p>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" required  name="nic" lines="none" ngModel #nic="ngModel" placeholder="Nic No"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!nic.valid && nic.touched" lines="none">
+              <p>Please Enter the Nic Number</p>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" required  name="address" lines="none" ngModel #address="ngModel" placeholder="Your Address"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!address.valid && address.touched" lines="none">
+              <p>Please Enter the Address</p>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Section</ion-label>
+              <ion-select [interfaceOptions]="customAlertOptions" interface="alert" name ='zone' ngModel  required #zone="ngModel">
+                <ion-select-option *ngFor="let zone of zones" [value]="zone">
+                  {{zone}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item *ngIf="!zone.valid && zone.touched" lines="none">
+              <ion-label>Zone Should be Valided</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text"  minlength="6"   required password name="password" ngModel #password="ngModel" placeholder="Password"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!password.valid && password.touched" lines="none">
+              <p>Please Enter the Valid Password</p>
+            </ion-item>
+
+            <ion-button type="submit" size="large" fill="solid"  expand="block" color="primary" >Logup</ion-button>
+            <ion-button type="button" size="large" fill="solid"  expand="block" color="primary" routerLink="/login">Login</ion-button>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</form>
+</ion-content>
+
+
+<!-- this.http.put(this.url+`/${id}`) -->
+<!-- this.http.delete(this.url+`/${emp.id}`+emp) -->
